@@ -13,7 +13,7 @@ const cookie = Astro.cookies.get("cancer_test").value;
 	<body>
 		<p>
 			<a href="/api/auth1">Sign in w/o rewrite</a><br />
-			<a href="/api/auth2">Sign in w/ rewrite api</a>
+			<a href={`/api/auth2/?redirectTo=${Astro.request.url}`}>Sign in w/ rewrite api</a>
 		</p>
 		<p>{cookie ?? "no cookie"}</p>
 	</body>
